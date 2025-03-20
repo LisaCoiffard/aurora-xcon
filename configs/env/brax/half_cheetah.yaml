@@ -1,0 +1,37 @@
+name: half_cheetah
+qdax_name: halfcheetah_uni
+backend: 
+version: v1
+reward_type: 
+
+episode_length: 1000
+policy_hidden_layer_size: [128, 128]
+exclude_current_positions_from_observation: true
+
+
+# passive archive settings
+min_bd: 0
+max_bd: 1
+grid_shape: [40, 40]
+num_init_cvt_samples: 50000
+num_centroids: 1024
+
+task: # active archive settings
+  bd_extractor: "feet_contact" 
+  grid_shape: [40, 40]
+  min_bd: 0
+  max_bd: 1
+  num_init_cvt_samples: 50000
+  num_centroids: 1024
+  num_descriptors: 2
+
+# max/min task fitness values for consistent plotting
+vmax: 6000
+vmin: 0
+
+observation_extraction:
+  subsample: true
+  sampling_freq: 10
+  observation_option: "sensory_data" # options: "sensory_data" or "images"
+  normalize_obs: true
+  max_obs_size: 25

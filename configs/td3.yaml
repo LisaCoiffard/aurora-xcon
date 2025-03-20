@@ -1,0 +1,36 @@
+name: td3_baseline
+defaults: 
+  - hydra: default # load default hydra settings
+  - wandb: default # load default wandb settings
+  - env: kheperax # load environment settings
+  - _self_
+
+seed: 42
+backend: jax
+
+batch_size: 512
+qd_batch_size: 1
+num_total_steps: 1_000_000_000 #  num_total_evals * episode_length
+
+metrics_log_period: 10
+
+grad_updates_per_step: 1 # multiply by batchsize to get grad updates per step for the batch
+warmup_steps: 2_000
+
+# TD3 params
+buffer_size: 1_000_000 
+transitions_batch_size: 100
+soft_tau_update: 0.005 
+expl_noise: 0.1
+policy_delay: 2 
+discount: 0.99 
+noise_clip: 0.5 
+policy_noise: 0.2 
+reward_scaling: 1.0
+critic_hidden_layer_size: [256, 256]
+critic_learning_rate: 3e-4
+policy_learning_rate: 3e-4
+
+wandb: 
+  group: ${env.name}
+  tags: ['${name}', '${env.name}']

@@ -1,0 +1,18 @@
+job_name: pga_aurora
+
+walltime: 04:59:00
+
+nnodes: 1
+ncpus: 8
+mem: 24gb
+ngpus: 1
+gpu_type: RTX6000
+
+queue: null  # -q express -P exp-00097
+njobs: 10
+args:
+  # - "pga_aurora env=brax\/walker loss_type=triplet extinction=true seed=\$RANDOM"
+  - "pga_aurora env=brax\/ant_maze loss_type=mse extinction=false seed=\$RANDOM"
+  - "pga_aurora env=brax\/ant_maze loss_type=mse extinction=true seed=\$RANDOM"
+  - "pga_aurora env=brax\/ant_maze loss_type=triplet extinction=false seed=\$RANDOM"
+  - "pga_aurora env=brax\/ant_maze loss_type=triplet extinction=true seed=\$RANDOM"

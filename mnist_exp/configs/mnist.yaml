@@ -1,0 +1,25 @@
+name: mnist
+defaults: 
+  - hydra: default # load default hydra settings
+  - wandb: default # load default wandb settings
+  - _self_
+
+seed: 42
+
+# Model parameters
+hidden_size: 2
+features: 16
+
+# Training parameters
+model_epoch_period: 10
+learning_rate: 1e-2
+model_batch_size: 128
+min_delta_early_stopping: 0.0005
+
+# Loss parameters
+loss_type: "triplet"  # can be "mse" or "triplet"
+triplet_margin: 0.2
+
+# Experiment tracking
+wandb:
+  tags: ['${name}']

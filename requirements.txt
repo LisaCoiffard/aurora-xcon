@@ -1,0 +1,21 @@
+--find-links https://storage.googleapis.com/jax-releases/jax_cuda_releases.html
+
+hydra-core
+omegaconf
+wandb
+plotly
+tqdm
+brax
+numpy
+scipy
+jax[cuda12_pip]==0.4.35
+flax
+scikit-learn
+statsmodels
+seaborn
+ipython
+ipykernel
+imageio
+evosax
+tensorflow-datasets
+tensorflow

@@ -1,0 +1,6 @@
+output_subdir: # prevents hydra from creating a .hydra dir
+run:
+    dir: ./output/${now:%Y-%m-%d}/${now:%H-%M-%S} # tells hydra to put the logs in a directory with the current date and time
+verbose: [__main__] # tells hydra to put the logger to DEBUG
+job:
+    chdir: true # tells hydra to change the working directory to the run directory

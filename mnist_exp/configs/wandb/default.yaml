@@ -1,0 +1,4 @@
+project: mt-map-elites
+job_type: train
+name: ${now:%Y_%m_%d_%H_%M_%S}
+mode: online

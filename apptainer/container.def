@@ -1,0 +1,53 @@
+Bootstrap: docker
+From: ubuntu:22.04
+
+%help
+    Implementation of Multi-Task MAP-Elites in the MuJoCo Ant environment.
+
+%environment
+	export TZ=Europe/London
+	export OPENBLAS_NUM_THREADS=1
+
+	# venv
+	export VIRTUAL_ENV="/venv"
+	export _OLD_VIRTUAL_PATH="$PATH"
+	export PATH="$VIRTUAL_ENV/bin:$PATH"
+
+	# python
+	export PYTHONPATH="/workspace/src"
+	# Add submodules to PYTHONPATH
+	export PYTHONPATH="/workspace/src/external/qdax:$PYTHONPATH"
+
+%post
+	export DEBIAN_FRONTEND=noninteractive
+
+	# Export environment variables permanently
+	echo "export WANDB_API_KEY={{ wandb_api_key }}" >> $APPTAINER_ENVIRONMENT
+	echo "export CUDA_VISIBLE_DEVICES={{ cuda_devices }}" >> $APPTAINER_ENVIRONMENT
+
+	# Update and install required libraries
+	apt update && apt install -y wget git software-properties-common ffmpeg
+
+	# Install Python
+	add-apt-repository ppa:deadsnakes/ppa
+	apt install -y python3.11 python3.11-venv
+
+	# Create a virtual environment
+	python3.11 -m venv /venv
+	. /venv/bin/activate
+	python -m ensurepip
+	pip install --upgrade pip
+
+	# Set up workspace
+	mkdir /workspace/ && cd /workspace/
+
+	# Clone repository to /workdir/
+	git clone --recurse-submodules https://{{ gitlab_user }}:{{ gitlab_token }}@gitlab.doc.ic.ac.uk/AIRL/research_projects/lisa_coiffard/mt-map-elites.git src/ && cd src/
+	git checkout {{ commit }}
+
+	# Install repository
+	pip install -r requirements.txt
+
+%runscript
+	# Run main
+	python /workspace/src/main.py "$@"

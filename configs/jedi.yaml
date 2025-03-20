@@ -1,0 +1,58 @@
+name: jedi_baseline
+defaults: 
+  - hydra: default # load default hydra settings
+  - wandb: default # load default wandb settings
+  - env: kheperax # load environment settings
+  - _self_
+
+seed: 42
+
+# QD settings
+batch_size: 
+num_iterations: 2_000
+
+metrics_log_period: 5
+repertoire_log_period: 500
+me_repertoire: true
+
+# ES settings
+es_pop: 16
+sigma_g: 0.05
+es_type: 'Sep_CMA_ES'
+
+# JEDi emitter settings
+pool_size: 4
+es_gens: 100
+wtfs_alpha: 0.5
+weighted_gp: true
+
+env_params:
+  kheperax:
+    es_type: 'Sep_CMA_ES'
+    pool_size: 16
+    es_pop: 16
+    wtfs_alpha: 0.7
+    es_gens: 100
+    num_iterations: 4_000
+  ant_maze:
+    es_type: 'LM_MA_ES'
+    es_pop: 256
+    wtfs_alpha: 0.5
+    es_gens: 1000
+    num_iterations: 1_000
+  walker:
+    es_type: 'LM_MA_ES'
+    es_pop: 256
+    wtfs_alpha: 0.3
+    es_gens: 1000
+    num_iterations: 1_000
+  half_cheetah:
+    es_type: 'LM_MA_ES'
+    es_pop: 256
+    wtfs_alpha: 0.1
+    es_gens: 100
+    num_iterations: 1_000
+
+wandb: 
+  group: ${env.name}
+  tags: ['${name}', '${env.name}']

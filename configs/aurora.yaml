@@ -1,0 +1,71 @@
+name: aurora_baseline
+defaults: 
+  - hydra: default # load default hydra settings
+  - wandb: default # load default wandb settings
+  - env: kheperax # load environment settings
+  - _self_
+
+seed: 42
+backend: jax
+
+# QD settings
+batch_size: 512
+num_iterations: 2000
+num_total_steps: 2_000_000 # num_total_evals * episode_length
+
+metrics_log_period: 5
+me_repertoire: false
+
+# Emitter settings
+iso_sigma: 0.005
+line_sigma: 0.05
+
+# AURORA settings
+reinit_params: false
+reinit_opt: true
+no_csc: false
+no_training: false
+csc_orig: false
+
+repertoire: "adaptive" # "adaptive" or "threshold"
+max_size: 1024 
+target_size: 922 # 0.9*max_size
+l_value_init: 0.2
+prop_gain: 1e-4
+default_update_base: 10
+
+# Encoder settings
+model_batch_size: 128
+hidden_size: 10
+features: 8 # only used for AutoEncoder for image obs
+model_epoch_period: 200
+learning_rate: 1e-2
+min_delta_early_stopping: 0.0005
+
+loss_type: 'mse' # 'mse', 'both' or 'triplet'
+triplet_margin: 0.2
+triplet_loss_weight: 1
+margin_auto_adjust: true
+
+# Extinction settings
+extinction: false
+extinction_freq: 10
+remaining_prop: 0.05
+
+env_params:
+  kheperax:
+    iso_sigma: 0.2
+    line_sigma: 0
+  ant_maze:
+    iso_sigma: 0.005
+    line_sigma: 0.05
+  walker:
+    iso_sigma: 0.005
+    line_sigma: 0.05
+  half_cheetah:
+    iso_sigma: 0.005
+    line_sigma: 0.05
+
+wandb: 
+  group: ${env.name}
+  tags: ['${name}', '${env.name}']
