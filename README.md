@@ -1,19 +1,22 @@
 # aurora-xcon
 
-<p align="center">
-  <div style="display: inline-block; text-align: center; margin: 0 40px;">
-    <img src="img/aurora_xcon.gif" width="250px" alt="AURORA-XCon"/><br/>
-    <strong>AURORA-XCon</strong>
-  </div>
-  <div style="display: inline-block; text-align: center; margin: 0 40px;">
-    <img src="img/aurora.gif" width="250px" alt="AURORA"/><br/>
-    <strong>AURORA</strong>
-  </div>
-</p>
+<table>
+  <tr>
+    <td align="center">
+      <img src="img/aurora_xcon.gif" width="300px" alt="AURORA-XCon"/><br/>
+      <strong>AURORA-XCon</strong>
+    </td>
+    <td align="center">
+      <img src="img/aurora.gif" width="300px" alt="AURORA"/><br/>
+      <strong>AURORA</strong>
+    </td>
+  </tr>
+</table>
 
 This repository contains the code for *"Overcoming Deceptiveness in Fitness Optimization with Unsupervised Quality-Diversity"*. **AURORA-XCon** is an optimization algorithm that discovers high-performing solutions using **unsupervised quality-diversity**. It builds on the AURORA framework and introduces two key features: 1) **contrastive learning** and 2) **extinction events**.
 
 **Authors**: [Lisa Coiffard](https://scholar.google.com/citations?user=VBpD7AIAAAAJ&hl=en), [Paul Templier](https://scholar.google.com/citations?hl=en&user=lPrCGzYAAAAJ), [Antoine Cully](https://scholar.google.com/citations?user=rZtJlPQAAAAJ&hl=en&oi=sra)
+
 **Paper**: *Coming Soon*
 
 ---
