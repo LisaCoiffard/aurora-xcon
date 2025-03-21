@@ -1,12 +1,12 @@
 # aurora-xcon
 
 <p align="center">
-  <div style="display: inline-block; text-align: center; margin: 0 20px;">
-    <img src="img/aurora_xcon.gif" width="300px" alt="AURORA-XCon"/><br/>
+  <div style="display: inline-block; text-align: center; margin: 0 40px;">
+    <img src="img/aurora_xcon.gif" width="250px" alt="AURORA-XCon"/><br/>
     <strong>AURORA-XCon</strong>
   </div>
-  <div style="display: inline-block; text-align: center; margin: 0 20px;">
-    <img src="img/aurora.gif" width="300px" alt="AURORA"/><br/>
+  <div style="display: inline-block; text-align: center; margin: 0 40px;">
+    <img src="img/aurora.gif" width="250px" alt="AURORA"/><br/>
     <strong>AURORA</strong>
   </div>
 </p>
