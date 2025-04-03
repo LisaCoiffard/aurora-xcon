@@ -23,7 +23,8 @@ This repository contains the code for *"Overcoming Deceptiveness in Fitness Opti
 
 **Authors**: [Lisa Coiffard](https://scholar.google.com/citations?user=VBpD7AIAAAAJ&hl=en), [Paul Templier](https://scholar.google.com/citations?hl=en&user=lPrCGzYAAAAJ), [Antoine Cully](https://scholar.google.com/citations?user=rZtJlPQAAAAJ&hl=en&oi=sra)
 
-**Paper** (GECCO 2025): 
+**Paper** (GECCO 2025): *coming soon*
+
 **Paper** (arxiv): https://arxiv.org/abs/2504.01915
 
 ---
