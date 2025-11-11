@@ -120,7 +120,7 @@ Located in the `mnist_exp/` directory, this notebook reproduces the MNIST experi
 
 ## 📖 Citation
 
-*Coming Soon*
+> Lisa Coiffard, Paul Templier, and Antoine Cully. 2025. Overcoming Deceptiveness in Fitness Optimization with Unsupervised Quality-Diversity. In *Proceedings of the Genetic and Evolutionary Computation Conference (GECCO '25)*. Association for Computing Machinery, New York, NY, USA, 122–130. https://doi.org/10.1145/3712256.3726314
 
 ---
 
