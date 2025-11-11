@@ -42,7 +42,7 @@ From: ubuntu:22.04
 	mkdir /workspace/ && cd /workspace/
 
 	# Clone repository to /workdir/
-	git clone --recurse-submodules https://{{ gitlab_user }}:{{ gitlab_token }}@gitlab.doc.ic.ac.uk/AIRL/research_projects/lisa_coiffard/mt-map-elites.git src/ && cd src/
+	git clone --recurse-submodules https://{{ github_user }}:{{ github_token }}@github.com/LisaCoiffard/aurora-xcon.git src/ && cd src/
 	git checkout {{ commit }}
 
 	# Install repository
